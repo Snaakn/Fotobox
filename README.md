@@ -3,8 +3,7 @@ A party fotobox where guests can download their fotos from
 
 ## How it works:
 
-The camera is tethered to a directory inside the fotobox directory-
-in the script it is "eyefifolder/2019"
+The camera is tethered to a directory inside the fotobox directory -in the script referred to as "eyefifolder/2019" - how to tether depends on the camera you use, (I have an eyefi sd-card and used a [script by Jeff Tschang](http://www.returnbooleantrue.com/2009/01/eye-fi-standalone-server.html))
 
 once the script is running it searches the directory for new images, renames them to Fotobox$number.jpg and moves it to the images directory.
 
