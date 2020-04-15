@@ -15,7 +15,7 @@ else
 	#darktable-cli $f global.xmp /images/Fotobox$C.jpg
 	
 	# copy the new image to the images directory and change its name so the viewer recognises it
-	cp $f /images/Fotobox$C.jpg
+	mv $f /images/Fotobox$C.jpg
 
 	# old code: the images were saved to another location with their number written on it
 	# and then shown to the party guests on the screen so they could download their foto
