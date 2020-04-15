@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="viewer-style.css">
+</head>
+<html>
+
+<body onload="first()">
+    <p id="p1">test</p>
+    <div class="container">
+        <img class="image" id="image" src="empty.jpg" alt="">
+    </div>
+</body>
+
+
+
+
+<script>
+
+    function LinkCheck(url) {
+        var img = new Image();
+        img.src = url;
+        return img.height != 0;
+    }
+
+    function findLatest(num) {
+        // the fotos are named "Fotobox" + a number ".jpg"
+        mynum = 1 + parseInt(num);
+        var path = "images/Fotobox" + mynum + ".jpg";
+        if (LinkCheck(path)) {
+            localStorage.setItem("number", mynum);
+            loadimg(mynum);
+        }
+
+    }
+
+    function first(){
+        localStorage.setItem("number", 0);
+        //alert("loading first image");
+        loadimg(0);
+    }
+
+    function cycle(num){
+        var numb = parseInt(localStorage.getItem("number"));
+        
+        if ((parseInt(num) + 1) > numb){
+            //alert("calling 0");
+            loadimg(0);
+        } else {
+            //alert("calling" + numb)
+            loadimg(parseInt(num) + 1);
+        }
+
+    }
+
+
+    function loadimg(num){
+        var filename = "images/Fotobox" + num + ".jpg";
+        if(!LinkCheck(filename)){
+            filename = "empty.jpg";
+        }
+
+        document.getElementById("image").src=filename;
+        document.getElementById("p1").innerHTML = "Bildcode: " + num.toString();
+
+        setTimeout(function(){
+            findLatest(localStorage.getItem("number"));
+            cycle(num);} ,3000);
+    }
+
+
+
+</script>
+
+
+</html>

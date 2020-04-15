@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+
+ <head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<H1>Willkommen in der Fotobox</h1>
+</head> 
+
+<body>
+
+<p>Die Bedienung ist ganz einfach:</p>
+<p>Einfach den Code vom Foto eingeben und los!"</p>
+
+<form>
+<input type ="number" class="input" id="code" name="code"><br>
+
+<button class="button" onclick="getMyImg()">Los!</button>
+</form>
+
+<script>
+function getMyImg(){
+	
+	var code = document.getElementById("code").value;
+	//var url = "http://fotobox/" + code.toString() + ".jpg";
+	// for offline testing
+	var url = "images/Fotobox" + code.toString() + ".jpg";	
+	//alert(url);	
+	window.open(url);
+
+}
+</script>
+
+
+</body>
+
+</html>

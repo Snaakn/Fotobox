@@ -1,0 +1,76 @@
+body{
+	background-color:  maroon;
+	background-image: url("background.jpg");
+	background-repeat: no-repeat;
+	background-size: 300%;
+}
+
+h1{
+	background-color: black;
+	background-image:url(head.jpg);
+	background-size: 100%;
+	color: gold;
+	text-align: center;
+	border-radius: 25px;
+	
+}
+
+
+h2{
+	color: gold;
+	text-align: center;
+}
+
+
+p{
+	text-align: center;
+	color: gold;
+}
+
+form{
+	text-align: center;
+	width: 90%;
+	padding: 8px 20px;
+	margin: 0px 0;
+
+}
+
+.input{
+	background-color: black;
+	border: inset;
+	border-color: gold;
+	border-radius: 25px;
+	color: gold;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	
+}
+
+
+.button {
+	background-color: gold;
+	border: double;
+	border-radius: 25px;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.button:hover {
+		background-color: green;
+}
+
+.button:active{
+	background-color: grey;
+	
+}
