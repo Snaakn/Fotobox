@@ -29,10 +29,6 @@ p{
 
 form{
 	text-align: center;
-	width: 90%;
-	padding: 8px 20px;
-	margin: 0px 0;
-
 }
 
 .input{
@@ -50,9 +46,25 @@ form{
 	cursor: pointer;
 	
 }
+.frame {
+    text-align: center;
+    position: relative;
+    left: 0%; 
+    right: 0%; 
+}
+.image {
+    width: 80%; 
+    left: 10%;
+    top: 15%; 
+    z-index: -1;
+    border: gold;
+    border-style: double;
+    border-width: 5px;
+}
 
 
 .button {
+	position: relative;
 	background-color: gold;
 	border: double;
 	border-radius: 25px;

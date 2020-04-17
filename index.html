@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="utf-8">
-
  <head>
 <link rel="stylesheet" type="text/css" href="style.css">
 <H1>Willkommen in der Fotobox</h1>
@@ -10,29 +7,50 @@
 
 <body>
 
-<p>Die Bedienung ist ganz einfach:</p>
-<p>Einfach den Code vom Foto eingeben und los!"</p>
-
-<form>
-<input type ="number" class="input" id="code" name="code"><br>
-
-<button class="button" onclick="getMyImg()">Los!</button>
-</form>
-
-<script>
-function getMyImg(){
+	<p>Die Bedienung ist ganz einfach:</p>
+	<p>Einfach den Code vom Foto eingeben und los!</p>
+	<div class="frame">
+		<img class="image" id="image" src="empty.jpg" alt="" download>
+	</div>
 	
-	var code = document.getElementById("code").value;
-	//var url = "http://fotobox/" + code.toString() + ".jpg";
-	// for offline testing
-	var url = "images/Fotobox" + code.toString() + ".jpg";	
-	//alert(url);	
-	window.open(url);
-
-}
-</script>
-
+	<div class="frame">
+		<button class="button" type="button" onclick="imgStep(-1)">zurück</button>
+		<button class="button" type="button" onclick="imgStep(1)">weiter</button>
+	</div>
+		<form>
+			<input type ="number" class="input" id="code"><br>
+			<button class="button" type="button" onclick="getMyImg()">Los!</button>				<button class="button" type="button" onclick="downloadImg()">Download</button>
+		</form>
 
 </body>
+
+<script>
+	function imgStep(step){
+		inputField = document.getElementById("code");
+		 inputField.value = parseInt(inputField.value) + step;
+		 getMyImg();
+	}
+
+	function getMyImg(){
+		var code = document.getElementById("code").value;
+		//var url = "http://fotobox/" + code.toString() + ".jpg";
+		// for offline testing
+		var url = "./images/Fotobox" + code + ".jpg";	
+		//alert(url);	
+		//window.open(url);
+		document.getElementById("image").src=url;
+	}
+
+	function downloadImg(){
+		file = document.getElementById("image").src;
+		var link = document.createElement("a");
+		link.setAttribute("href", file, "download");
+		link.style.display= "none";
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+
+	}
+</script>
 
 </html>
