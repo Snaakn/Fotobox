@@ -11,5 +11,5 @@ The imgviewer.html has an embedded script that looks for new fotos in the images
 If there are no new fotos it cycles through all the fotos as a slideshow.
 
 
-- I used a docker container as a web server to host the fotobox in an open wifi network I had set up
-the party guests could connect to it and access the fotobox via http://fotobox/ which lead to the index.html where they had to put in the fotocode to download their picture
+- I used a docker container as a web server to host the fotobox in an open wifi network I had set up.
+The party guests could connect to it and access the fotobox via http.
